@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.spline-hero div canvas {
+  border-radius: 50px;
+  height: 50vh !important;
+}
+
+@media (min-width: 640px) {
+  .spline-hero div canvas {
+    height: 70vh !important;
+  }
+}

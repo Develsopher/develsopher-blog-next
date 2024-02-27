@@ -24,10 +24,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="ko">
       <body
-        className={cn(notoSansKr.variable, roboto.variable, 'bg-white font-ns')}
+        className={cn(
+          notoSansKr.variable,
+          roboto.variable,
+          'dark:bg-dark flex h-screen w-screen flex-col bg-light font-ns',
+        )}
       >
         <Header />
-        {children}
+        <main className="flex flex-1 flex-col overflow-y-auto">{children}</main>
       </body>
     </html>
   );

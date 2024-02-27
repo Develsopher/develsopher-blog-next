@@ -1,20 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: ['class'],
   content: [
     './pages/**/*.{js,jsx}',
     './components/**/*.{js,jsx}',
     './app/**/*.{js,jsx}',
     './src/**/*.{js,jsx}',
   ],
-  prefix: '',
+  darkMode: ['class'],
   theme: {
     container: {
       center: true,
-      padding: '2rem',
-      screens: {
-        '2xl': '1400px',
-      },
     },
     extend: {
       keyframes: {
@@ -34,7 +29,9 @@ module.exports = {
       colors: {
         primary: '#1A1A1A',
         light: '#ffffff',
-        accent: '#6941c6',
+        accent: '#7B00D3',
+        accentDark: '#ffdb4d',
+        gray: '#747474',
       },
       fontFamily: {
         ns: ['var(--font-ns)'],

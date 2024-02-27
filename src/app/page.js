@@ -1,13 +1,11 @@
-'use client';
-import Spline from '@splinetool/react-spline';
-import { Button } from '../components/ui/button';
-
+import HeroSection from '../components/Home/HeroSection';
+import { allBlogs } from '../../.contentlayer/generated';
 export default function App() {
+  console.log('hello world');
+  // console.log(allBlogs);
   return (
-    <div className="rounded-xl p-6">
-      <Spline scene="https://prod.spline.design/TN2XP94ryaoaZ8-U/scene.splinecode" />
-      <p className="font-rb">iam roboto 나는 로토</p>
-      <Button>Click ME</Button>
+    <div className="min-h-[2000px] overflow-y-auto">
+      {/* <HeroSection /> */}
     </div>
   );
 }

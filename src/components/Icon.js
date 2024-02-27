@@ -1,4 +1,4 @@
-import { cn } from '../utils/style';
+import { cn } from '@/src/utils/style';
 
 export const SunIcon = ({ className, ...rest }) => (
   <svg
