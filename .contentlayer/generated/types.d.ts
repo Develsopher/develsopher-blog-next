@@ -20,6 +20,7 @@ export type Blog = {
   image?: ImageFieldData | undefined
   isPublished: boolean
   author: string
+  category: string
   tags?: string[] | undefined
   /** MDX file body */
   body: MDX

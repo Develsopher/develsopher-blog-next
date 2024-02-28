@@ -36,6 +36,10 @@ var Blog = defineDocumentType(() => ({
       type: "string",
       required: true
     },
+    category: {
+      type: "string",
+      required: true
+    },
     tags: {
       type: "list",
       of: { type: "string" }
@@ -72,9 +76,11 @@ var Blog = defineDocumentType(() => ({
   }
 }));
 var codeOptions = {
-  theme: "github-dark"
+  theme: "github-dark",
+  grid: false
 };
 var contentlayer_config_default = makeSource({
+  /* options */
   contentDirPath: "content",
   documentTypes: [Blog],
   mdx: {
@@ -89,4 +95,4 @@ var contentlayer_config_default = makeSource({
 export {
   contentlayer_config_default as default
 };
-//# sourceMappingURL=compiled-contentlayer-config-VNR5XHUP.mjs.map
+//# sourceMappingURL=compiled-contentlayer-config-VC5J5O7D.mjs.map

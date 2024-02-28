@@ -29,15 +29,21 @@ module.exports = {
       colors: {
         primary: '#1A1A1A',
         light: '#ffffff',
-        accent: '#7B00D3',
-        accentDark: '#ffdb4d',
+        accent: '#34568B',
+        accentDark: '#957DAD',
         gray: '#747474',
       },
       fontFamily: {
         ns: ['var(--font-ns)'],
         rb: ['var(--font-rb)'],
       },
+      screens: {
+        sxl: '1180px',
+        // @media (min-width: 1180px) {...}
+        cs: '480px',
+        // @media (min-width: 480px) {...}
+      },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [require('tailwindcss-animate'), require('@tailwindcss/typography')],
 };

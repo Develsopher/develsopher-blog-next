@@ -1,57 +1,61 @@
-import { makeSource, defineDocumentType } from "@contentlayer/source-files";
-import readingTime from "reading-time";
-import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import rehypePrettyCode from "rehype-pretty-code";
-import rehypeSlug from "rehype-slug";
-import remarkGfm from "remark-gfm";
-import GithubSlugger from "github-slugger";
+import { makeSource, defineDocumentType } from '@contentlayer/source-files';
+import readingTime from 'reading-time';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypePrettyCode from 'rehype-pretty-code';
+import rehypeSlug from 'rehype-slug';
+import remarkGfm from 'remark-gfm';
+import GithubSlugger from 'github-slugger';
 
 const Blog = defineDocumentType(() => ({
-  name: "Blog",
-  filePathPattern: "**/**/*.mdx",
-  contentType: "mdx",
+  name: 'Blog',
+  filePathPattern: '**/**/*.mdx',
+  contentType: 'mdx',
   fields: {
     title: {
-      type: "string",
+      type: 'string',
       required: true,
     },
     publishedAt: {
-      type: "date",
+      type: 'date',
       required: true,
     },
     updatedAt: {
-      type: "date",
+      type: 'date',
       required: true,
     },
     description: {
-      type: "string",
+      type: 'string',
       required: true,
     },
-    image: { type: "image" },
+    image: { type: 'image' },
     isPublished: {
-      type: "boolean",
+      type: 'boolean',
       default: true,
     },
     author: {
-      type: "string",
+      type: 'string',
+      required: true,
+    },
+    category: {
+      type: 'string',
       required: true,
     },
     tags: {
-      type: "list",
-      of: { type: "string" },
+      type: 'list',
+      of: { type: 'string' },
     },
   },
   computedFields: {
     url: {
-      type: "string",
+      type: 'string',
       resolve: (doc) => `/blogs/${doc._raw.flattenedPath}`,
     },
     readingTime: {
-      type: "json",
+      type: 'json',
       resolve: (doc) => readingTime(doc.body.raw),
     },
     toc: {
-      type: "json",
+      type: 'json',
       resolve: async (doc) => {
         const regulrExp = /\n(?<flag>#{1,6})\s+(?<content>.+)/g;
         const slugger = new GithubSlugger();
@@ -62,7 +66,7 @@ const Blog = defineDocumentType(() => ({
 
             return {
               level:
-                flag?.length == 1 ? "one" : flag?.length == 2 ? "two" : "three",
+                flag?.length == 1 ? 'one' : flag?.length == 2 ? 'two' : 'three',
               text: content,
               slug: content ? slugger.slug(content) : undefined,
             };
@@ -76,17 +80,19 @@ const Blog = defineDocumentType(() => ({
 }));
 
 const codeOptions = {
-  theme: "github-dark",
+  theme: 'github-dark',
+  grid: false,
 };
 
 export default makeSource({
-  contentDirPath: "content",
+  /* options */
+  contentDirPath: 'content',
   documentTypes: [Blog],
   mdx: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [
       rehypeSlug,
-      [rehypeAutolinkHeadings, { behavior: "append" }],
+      [rehypeAutolinkHeadings, { behavior: 'append' }],
       [rehypePrettyCode, codeOptions],
     ],
   },
