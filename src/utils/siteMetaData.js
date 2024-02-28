@@ -6,7 +6,7 @@ const siteMetadata = {
   description: '프론트엔드 개발에 대한 모든 것',
   language: 'ko-kr',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://create-blog-with-nextjs.vercel.app',
+  siteUrl: 'https://develsopher.com',
   siteLogo: '/logo.png',
   socialBanner: '/social-banner.png', // add social banner in the public folder
   email: 'jchae7184@gmail.com',
