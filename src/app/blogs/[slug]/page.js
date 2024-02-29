@@ -129,7 +129,7 @@ export default function BlogPage({ params }) {
               className="sticky top-6 max-h-[80vh] overflow-hidden overflow-y-auto rounded-lg border-[1px] border-solid border-primary p-4 text-primary dark:border-light dark:text-light"
               open
             >
-              <summary className="cursor-pointer text-lg font-semibold capitalize">
+              <summary className="cursor-pointer text-xl font-semibold capitalize">
                 Table Of Content
               </summary>
               <ul className="mt-4 font-rb text-base">
@@ -140,11 +140,10 @@ export default function BlogPage({ params }) {
                         href={`#${heading.slug}`}
                         data-level={heading.level}
                         className="flex items-center
-                                       justify-start border-solid border-primary/40 data-[level=two]:border-t 
-                                       data-[level=three]:pl-4
-                                       data-[level=two]:pl-0
-                                       data-[level=two]:pt-2 data-[level=three]:text-sm data-[level=two]:text-base dark:border-accentDark/40
-                                       sm:data-[level=three]:pl-6
+                                       justify-start border-solid border-primary/40 data-[level=two]:border-t data-[level=four]:pl-10
+                                       data-[level=three]:pl-1
+                                       data-[level=two]:pt-2
+                                       data-[level=four]:text-sm data-[level=three]:text-base data-[level=two]:text-lg dark:border-accentDark/40
                                        "
                       >
                         {heading.level === 'three' ? (

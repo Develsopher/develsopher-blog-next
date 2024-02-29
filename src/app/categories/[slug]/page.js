@@ -33,7 +33,7 @@ export async function generateMetadata({ params }) {
 
 const CategoryPage = ({ params }) => {
   const allCategories = ['all'];
-  const blogs = allBlogs.filter((blog) => {
+  const filteredBlogs = allBlogs.filter((blog) => {
     const slugified = slug(blog.category);
     if (!allCategories.includes(slugified)) {
       allCategories.push(slugified);
@@ -42,6 +42,12 @@ const CategoryPage = ({ params }) => {
       return true;
     }
     return slugified === params.slug;
+  });
+
+  const blogs = filteredBlogs.sort((a, b) => {
+    const dateA = new Date(a.publishedAt);
+    const dateB = new Date(b.publishedAt);
+    return dateB - dateA;
   });
 
   return (

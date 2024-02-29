@@ -14,8 +14,7 @@ const BlogLayoutThree = ({ blog }) => {
           alt={blog.title}
           width={blog.image.width}
           height={blog.image.height}
-          className=" ease aspect-[4/3] size-full object-cover object-center  transition-all duration-300 group-hover:scale-105 "
-          sizes="(max-width: 640px) 100vw,(max-width: 1024px) 50vw, 33vw"
+          className="ease aspect-[4/3] size-full object-cover object-center  transition-all duration-300 group-hover:scale-105 "
         />
       </Link>
 
