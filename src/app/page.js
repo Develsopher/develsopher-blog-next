@@ -6,7 +6,7 @@ export default function App() {
   return (
     <>
       <HeroSection />
-      <FeaturedPosts blogs={allBlogs} />
+      {/* <FeaturedPosts blogs={allBlogs} /> */}
       <RecentPosts blogs={allBlogs} />
     </>
   );
