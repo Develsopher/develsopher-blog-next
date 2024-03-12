@@ -15,7 +15,7 @@ const RecentPosts = ({ blogs }) => {
           href="/categories/all"
           className="inline-block text-base font-medium text-accent underline-offset-2 hover:underline dark:text-accentDark md:text-lg"
         >
-          view all
+          view all👀
         </Link>
       </div>
       <div className="mt-8 grid grid-cols-1 grid-rows-2 gap-16 sm:grid-cols-2 lg:grid-cols-3">
