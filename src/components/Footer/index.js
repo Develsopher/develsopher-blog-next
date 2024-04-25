@@ -1,27 +1,20 @@
 import { GithubIcon } from '@/src/components/Icon';
 import siteMetadata from '@/src/utils/siteMetaData';
+import SocialIcon from '@/src/components/social-icons';
 import Link from 'next/link';
 const Footer = () => {
   return (
-    <footer className="container mt-4 px-2 text-sm text-primary dark:text-light sm:px-4 md:px-6 lg:px-10 xl:px-24">
-      <div className="w-full items-center justify-between space-y-4 text-center font-medium md:flex">
-        <div>&copy;2024 Develsopher All rights reserved.</div>
-        <div>
-          <Link
-            href="/sitemap.xml"
-            className="my-4 text-center underline md:my-0"
-          >
-            sitemap.xml
-          </Link>
+    <footer>
+      <div className="mt-16 flex flex-col items-center">
+        <div className="mb-3 flex space-x-4">
+          <GithubIcon className="ease fill-primary transition-all duration-200 hover:scale-125 dark:fill-light" />
         </div>
-        <div className="text-center">
-          <a
-            className="mr-4 inline-block size-6"
-            href={siteMetadata.github}
-            target="_blank"
-          >
-            <GithubIcon className="ease fill-primary transition-all duration-200 hover:scale-125 dark:fill-light" />
-          </a>
+        <div className="mb-2 flex space-x-2 text-sm text-primary dark:text-light">
+          <div>{siteMetadata.author}</div>
+          <div>{` • `}</div>
+          <div>{`© ${new Date().getFullYear()}`}</div>
+          <div>{` • `}</div>
+          <Link href="/">{siteMetadata.title}</Link>
         </div>
       </div>
     </footer>
